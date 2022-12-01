@@ -22,6 +22,13 @@ impl Display for City {
     }
 }
 
+impl Display for Color {
+    // created a new Display for color, just as one was made for City.
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        write!(f, "Red: {}, Green: {}, Blue: {},", self.red, self.green, self.blue)
+    }
+}
+
 #[derive(Debug)]
 struct Color {
     red: u8,
@@ -44,6 +51,8 @@ fn main() {
         Color { red: 0, green: 0, blue: 0 },
     ].iter() {
         // Hint : Fix the code so you can print it using {}
-        println!("{:?}", *color);
+
+        // remove the :?
+        println!("{}", *color);
     }
 }
